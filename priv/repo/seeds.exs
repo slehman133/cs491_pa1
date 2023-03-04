@@ -10,23 +10,23 @@
 # We recommend using the bang functions (`insert!`, `update!`
 # and so on) as they will fail if something goes wrong.
 
-1..49
+1..50
 |> Enum.each(fn _ ->
   PetStoreManager.Repo.insert!(%PetStoreManager.Customers.Pet{
     age: Enum.random(1..20) / 1,
     breed: Faker.Dog.PtBr.breed(),
-    name: Faker.Person.name(),
+    name: Faker.Person.first_name(),
     owner_last_name: Faker.Person.last_name(),
     species: ~s(canine)
   })
 end)
 
-50..100
+1..50
 |> Enum.each(fn _ ->
   PetStoreManager.Repo.insert!(%PetStoreManager.Customers.Pet{
     age: Enum.random(1..20) / 1,
     breed: Faker.Cat.breed(),
-    name: Faker.Person.name(),
+    name: Faker.Person.first_name(),
     owner_last_name: Faker.Person.last_name(),
     species: ~s(feline)
   })
