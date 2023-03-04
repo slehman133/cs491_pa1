@@ -1,0 +1,54 @@
+<%!-- <.header>
+  <div class=" text-5xl p-20 text-center bg-teal-100 border-4 border-black">
+    <h1>Pet Store Manager</h1>
+  </div>
+</.header>
+<div class="border-slate-200 border-2 m-5 "></div>
+<div class="m-40">
+<h1 class="text-indigo-900 text-3xl font-bold border-collapse">Pet Directory</h1>
+<.table class="border-2" id="pets" rows={@pets} row_click={&JS.navigate(~p"/pets/#{&1}")}>
+  <:col :let={pet} label="Name"><%= pet.name %></:col>
+  <:col :let={pet} label="Species"><%= pet.species %></:col>
+  <:col :let={pet} label="Breed"><%= pet.breed %></:col>
+  <:col :let={pet} label="Owner last name"><%= pet.owner_last_name %></:col>
+  <:col :let={pet} label="Age"><%= pet.age %></:col>
+</.table>
+</div> --%>
+
+<header>
+  <div class=" text-5xl p-20 text-center bg-teal-100 border-4 border-black">
+    <h1>Pet Store Manager</h1>
+  </div>
+</header>
+
+<div class="border-slate-200 border-2 m-5"></div>
+
+<div class="mt-40">
+
+<h1 class="text-indigo-900 text-3xl font-bold border-collapse ml-30 mb-5">Pet Directory</h1>
+
+
+<table class="table-auto text-left border-2 m-auto text-2xl w-[100rem]">
+<thead class="">
+  <tr class="border-2 p-2">
+    <th class="p-3 border-2">Name</th>
+    <th class="p-3 border-2">Species</th>
+    <th class="p-3 border-2">Breed</th>
+    <th class="p-3 border-2">Owner</th>
+    <th class="p-3 border-2">Age</th>
+  </tr>
+</thead>
+<tbody class="border-2 p-2">
+<%= for pet <- @pets do %>
+  <tr class="border-2 p-3">
+    <td class="border-2 p-3"><%= pet.name %></td>
+    <td class="border-2 p-3"><%= pet.species %></td>
+    <td class="border-2 p-3"><%= pet.breed %></td>
+    <td><%= pet.owner_last_name %></td>
+    <td class="border-2 p-3"><%= pet.age %></td>
+  </tr>
+<%= end %>
+</tbody>
+
+</table>
+</div>
